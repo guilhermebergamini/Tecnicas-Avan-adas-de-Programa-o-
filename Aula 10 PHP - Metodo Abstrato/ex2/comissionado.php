@@ -1,7 +1,8 @@
 <?php
 
-class Comissionado extends Funcionario {
+class comissionado extends Funcionario {
 
+    private $porcentagem;
     public function __construct($codigo, $nome, $salario, $porcentagem)
     {
 
@@ -12,7 +13,7 @@ class Comissionado extends Funcionario {
 
     public function calcularSalario($diasUteis)
     {
-        return ($this->salario / 30) * $diasUteis * (20 / 100) + $this->salario; 
+        return ($this->salario / 30) * $diasUteis * ($this->porcentagem / 100) + $this->salario; 
     }
 }
 
